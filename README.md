@@ -1,2 +1,0 @@
-# TheATM
-The Javascript ATM
