@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/custom.css">
 
   
- <script>
+<script>
 
 	// ask customer first and last name
 	var customer = prompt("Please enter your first and last name", " ");
@@ -25,7 +25,7 @@
 
 	var cusBal = intBal[randBal];
 
- </script>
+</script>
 
 
  
@@ -46,14 +46,17 @@ function addVal() {
     
     // calculate the initial balance and withdrawals and deposits 
     var newBal = dep1 + dep2 - with1;    
+    // round the new balance 2 decimals places
+    newBal.toFixed(2)
     
-    parseInt(x)  
-    
+    // compare the new balance against a zero balance 
     if(newBal > 0 ){    
-    customer = alert("Your new balance is" + " " + newBal);       
+    // alert the customer about thier new balance
+    customer = alert("Your new balance is $" + newBal);       
     }else{    
-    customer = alert("Balance Exceeded");    
-    }
+    // alert the customer about exceeding thier balance    
+    customer = alert("******Daily Limit Exceeded******");    
+    }    
    }
 </script>
  
@@ -61,51 +64,40 @@ function addVal() {
   
   
   <!------------------------------------------------------------------------------- Navigation ---------------------------------------------------->
-  <body>   
- <div class="container">
- <div class="jumbotron">
+<body>   
+   <div class="container">
+   <div class="jumbotron">
     <h1>The Atm</h1>      
-   <img src="image/bank.jpg"/>
-  </div>
-      
-</div>
+    <img src="image/bank.jpg"/>
+   </div>      
+   </div>
  
   
   <!------------------------------------------------------------------------------- Main Container ------------------------------------------------>  
   
   
   <div class="container-fluid">  
-  <div class="row">  
+   <div class="row">  
    <img src="image/atm.gif" style="padding-top:5%;"class="img-responsive" alt="Cinque Terre" width="304" height="236">
-    <div class="col-sm-12"> 
-    
-    
-    <script>  
-  // call the customer by name along with initial balance
-document.write("Hello " + customer + " your initial balance is" + " " + "$"+cusBal + "</br></br>");
-</script>
+  <div class="col-sm-12">     
   
-
-    
+<script>  
+   // call the customer by name along with initial balance
+   document.write("Hello " + customer + " your initial balance is" + " " + "$"+cusBal + "</br></br>");
+</script>    
     
 <form id="frm1" action="form_action.asp">
-Deposit:<input id="deposit" name="subject" type="input" value=""></input></br>
-Withdrawal: <input id="withdrawal" name="subject" type="input" value=""></input>
+	Deposit:<input id="deposit" name="subject" type="input" value=""></input> <br>
+	Withdrawal: <input id="withdrawal" name="subject" type="input" value=""></input>
 </form>
 
 
 <button type="button" class="btn btn-primary" onclick="addVal()">Calculate New Balance</button>
-
-
-
       
    </div> 
   </div>
 </div>
 
-<div class="col-sm-12"> 
-</div>
- 
 
  <!------------------------------------------------------------------------------- Footer ----------------------------------------------->  
 
