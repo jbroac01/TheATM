@@ -16,62 +16,54 @@
   
  <script>
 
-// ask customer first and last name
-var customer = prompt("Please enter your first and last name", " ");
+	// ask customer first and last name
+	var customer = prompt("Please enter your first and last name", " ");
+	// arrays of balances
+	var intBal = ["50.00" ,"300.00" , "125.000"];
+	// get a random number from intial balance (JUST TO MAKE IT FUN)
+	randBal = Math.floor((Math.random() * intBal.length));
 
+	var cusBal = intBal[randBal];
 
-// arrays of balances
-var intBal = ["50.00" ,"300.00" , "125.000"];
-
-// get a random number from intial balance (JUST TO MAKE IT FUN)
-randBal = Math.floor((Math.random() * intBal.length));
-
-var cusBal = intBal[randBal];
-
-</script>
+ </script>
 
 
  
  <script>
 
 function addVal() {
+	// Call out the value of deposit	
     var x = document.getElementById("deposit").value;
-    var y = document.getElementById("withdrawl").value;
+    // Call out the value of withdrawal	
+    var y = document.getElementById("withdrawal").value;
     
-    
+    // create a variable for deposit
     dep1 = Number(x); 
+    // create a variable for customer initial balance
 	dep2 = Number(cusBal); 
+	// create a variable for customer withdrawal
     with1 = Number(y); 
     
+    // calculate the initial balance and withdrawals and deposits 
     var newBal = dep1 + dep2 - with1;    
     
     parseInt(x)  
     
-    if(newBal > 0 ){
-    
-    customer = alert("Your new balance is" + " " + newBal);    
-    
-    }else{
-    
-    customer = alert("Balance Exceeded");
-    
+    if(newBal > 0 ){    
+    customer = alert("Your new balance is" + " " + newBal);       
+    }else{    
+    customer = alert("Balance Exceeded");    
     }
-}
+   }
 </script>
  
   </head>
   
   
   <!------------------------------------------------------------------------------- Navigation ---------------------------------------------------->
- 
-
-  <body> 
-  
-  
-  
-  
+  <body>   
  <div class="container">
-  <div class="jumbotron">
+ <div class="jumbotron">
     <h1>The Atm</h1>      
    <img src="image/bank.jpg"/>
   </div>
@@ -89,8 +81,8 @@ function addVal() {
     
     
     <script>  
-  // call the customer by name along with inital balance
-document.write("Hello " + customer + " your inital balance is" + " " + "$"+cusBal + "</br></br>");
+  // call the customer by name along with initial balance
+document.write("Hello " + customer + " your initial balance is" + " " + "$"+cusBal + "</br></br>");
 </script>
   
 
@@ -98,7 +90,7 @@ document.write("Hello " + customer + " your inital balance is" + " " + "$"+cusBa
     
 <form id="frm1" action="form_action.asp">
 Deposit:<input id="deposit" name="subject" type="input" value=""></input></br>
-WithDrawl: <input id="withdrawl" name="subject" type="input" value=""></input>
+Withdrawal: <input id="withdrawal" name="subject" type="input" value=""></input>
 </form>
 
 
